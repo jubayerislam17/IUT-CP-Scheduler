@@ -7,10 +7,13 @@ import {
     MDBBtn,
     MDBIcon
 } from 'mdb-react-ui-kit';
+import './Log-reg.css';
 
 export default function Register() {
     return (
-        <form>
+        <>
+            <div className="main">
+            <form>
             <MDBRow className='mb-4'>
                 <MDBCol>
                     <MDBInput id='form3Example1' label='First name' />
@@ -56,5 +59,7 @@ export default function Register() {
                 </MDBBtn>
             </div>
         </form>
+            </div>
+        </>
     );
 }

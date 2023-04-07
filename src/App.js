@@ -1,12 +1,19 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
+import Register from './Register';
 
 function App() {
   return (
     <>
-      <Login/>
+    <Routes>
+    <Route path="/" element={<Login />} />
+    <Route path="/register" element={<Register />} />
+
+      {/* <Login/> */}
+    </Routes>
     </>
+    
   );
 }
 

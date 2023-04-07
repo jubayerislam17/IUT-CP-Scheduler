@@ -7,8 +7,9 @@ import {
     MDBBtn,
     MDBIcon
 } from 'mdb-react-ui-kit';
-import './Login.css';
+import './Log-reg.css';
 import Register from './Register';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     return (
@@ -33,7 +34,7 @@ export default function Login() {
 
                     <div className='text-center'>
                         <p>
-                            Not a member? <a href=<Register/> >Register</a>
+                            Not a member? <Link to='/Register'> Register</Link>
                         </p>
                         <p>or sign up with:</p>
 
