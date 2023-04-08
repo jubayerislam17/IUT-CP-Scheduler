@@ -16,8 +16,8 @@ export default function Login() {
         <>
         <div className="main">
                 <form>
-                    <MDBInput className='mb-4' type='email' id='form2Example1' label='Email address' />
-                    <MDBInput className='mb-4' type='password' id='form2Example2' label='Password' />
+                    <MDBInput className='mb-4' type='id' name='id' id='form3Example3' label='ID' />
+                    <MDBInput className='mb-4' type='password' name='password' id='form2Example2' label='Password' />
 
                     <MDBRow className='mb-4'>
                         <MDBCol className='d-flex justify-content-center'>
@@ -36,7 +36,7 @@ export default function Login() {
                         <p>
                             Not a member? <Link to='/Register'> Register</Link>
                         </p>
-                        <p>or sign up with:</p>
+                        <p>or sign in with:</p>
 
                         <MDBBtn floating color="secondary" className='mx-1'>
                             <MDBIcon fab icon='facebook-f' />
