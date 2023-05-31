@@ -1,0 +1,70 @@
+#root{
+  height: 100%;
+}
+
+.container div {
+    font-size: 1.5vw;
+    padding-left: .6em;
+    padding-top: .13em;
+    padding-bottom: .10em;
+    color: white;
+    flex: 1;
+    border-radius: 5px;
+  }
+
+  div{
+    /* background-color: transparent; */
+  }
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top :1vh ;
+  }
+  
+.container {
+    display: flex;
+    margin-top :1vh ;
+    margin-bottom :1vh ;
+    border-radius: 5px;
+
+
+  }
+  .alone{
+    width: 100%;
+  }
+  .childbox {
+    /* flex: 1; */
+    /* height: 14vh; */
+    border-radius: 5px;
+    background-color: #2E3134;
+    margin-right: 7px;
+    box-sizing: border-box;
+    width: 50%;
+    text-align: left;
+  }
+
+  #brown{
+    background-color: #d7916a; 
+  }
+
+  #red{
+    background-color: #ff4747;
+  }
+
+  button{
+    border-radius: 15px;
+  }
+  .alone{
+    font-size: 1.5vw;
+    margin-left: 16.2vw;
+    width:67.2vw;
+    /* background-color: rgb(30,30,30) */
+    background-color: #2E3134;
+    text-align: left;
+    color: white;
+    padding-top: .13em;
+    padding-bottom: .10em;
+    padding-left:.60em ;
+    border-radius: 5px;
+  }
+

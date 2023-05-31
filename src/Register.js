@@ -46,9 +46,9 @@ export default function Register() {
                 atcoder_username :Yup.string()
                 .required("Required"),
             }),
-            // onSubmit: (values) => {
-            //     console.log(values.errors);
-            // }
+            onSubmit: (values) => {
+                console.log(values);
+            }
         })
 
         // console.log(formik.errors);
