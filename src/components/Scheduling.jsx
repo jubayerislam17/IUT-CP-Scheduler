@@ -28,12 +28,17 @@ const Scheduling = () => {
                 }
 
                 setUpcomingContests(upcomingContests);
-                setFilteredContests(upcomingContests);
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
+
+    useEffect(() => {
+        setFilteredContests(upcomingContests.filter(
+            (contest) => new Date(contest.start) <= new Date()
+        ));
+    }, [upcomingContests]);
 
     const handleFilterContests = (filterType) => {
         let filtered = [];
@@ -74,49 +79,43 @@ const Scheduling = () => {
                             <div className="title">Currently Ongoing</div>
                         </div>
                     </div>
-            </button>
-                
-                <button onClick={() => handleFilterContests('laterToday')}>
+                </button>
 
-                <div className="card2">
-                    <div className="gradient"></div>
-                    <div className="info">
-                        {/* <div className="text">First Group</div> */}
-                        <div className="title">Today</div>
+                <button onClick={() => handleFilterContests('laterToday')}>
+                    <div className="card2">
+                        <div className="gradient"></div>
+                        <div className="info">
+                            {/* <div className="text">First Group</div> */}
+                            <div className="title">Today</div>
+                        </div>
                     </div>
-                </div>
                 </button>
 
                 <button onClick={() => handleFilterContests('laterFuture')}>
-                <div className="card2">
-                    <div className="gradient"></div>
-                    <div className="info">
-                        {/* <div className="text">First Group</div> */}
-                        <div className="title"> This Week</div>
-                    </div>
-                </div>
-                </button>
-            </div>
-        <div className="container">
-            <h1>Upcoming Contests</h1>
-            {/* <div className="button-container">
-                <button onClick={() => handleFilterContests('ongoing')}>Ongoing Contests</button>
-                <button onClick={() => handleFilterContests('laterToday')}>Later Today Contests</button>
-                <button onClick={() => handleFilterContests('laterFuture')}>Later in Future Contests</button>
-            </div> */}
-            {filteredContests.map((curElem, index) => {
-                return (
-                    <div className="card" key={curElem.url}>
-                        <div className="card_item">
-                            <div className="card_inner">
-                                <div className="webName">{curElem.name}</div>
-                                <div className="time">{curElem.start}</div>
-                            </div>
+                    <div className="card2">
+                        <div className="gradient"></div>
+                        <div className="info">
+                            {/* <div className="text">First Group</div> */}
+                            <div className="title">This Week</div>
                         </div>
                     </div>
-                );
-            })}
-        </div>
+                </button>
+            </div>
+            <div className="container">
+                <h1>Upcoming Contests</h1>
+                {filteredContests.map((curElem, index) => {
+                    return (
+                        <div className="card" key={curElem.url}>
+                            <div className="card_item">
+                                <div className="card_inner">
+                                    <div className="webName">{curElem.name}</div>
+                                    <div className="time">{curElem.start}</div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
         </>
     );
 };
