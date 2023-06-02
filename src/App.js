@@ -7,8 +7,9 @@ import Fetching from './Fetching';
 import Settings from './components/Settings';
 import Homepage from './components/Homepage';
 import PersonalProfile from './components/PersonalProfile';
+//import Navbar from './components/Navbar';
+import { Navbar } from './components/Navbar';
 import Scheduling from './Scheduling';
-import Navbar from './components/Navbar';
 import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const {user} = useAuthContext()
@@ -17,7 +18,7 @@ function App() {
     <>
     <Navbar />
     <Routes>
-    <Route path="/" element={ !user? <Homepage/> : <Navigate to = "/fetching" /> } />
+    <Route path="/" element={ !user? <Login/ > : <Homepage/> } />
     <Route path="/register" element={!user ? <Register /> : <Navigate to = "/" />  } />
     <Route path="/fetching" element={<Fetching />} />
     <Route path="/scheduling" element={<Scheduling />} />
