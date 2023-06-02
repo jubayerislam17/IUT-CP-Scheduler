@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card'
-
-import "../css/Card.css";
+import Card from './Card';
 import axios from 'axios';
-
 import '../css/FetchData.css';
+import '../css/Card.css';
 
 const Scheduling = () => {
     const [upcomingContests, setUpcomingContests] = useState([]);
     const [filteredContests, setFilteredContests] = useState([]);
+    const [activeButton, setActiveButton] = useState(0);
 
     useEffect(() => {
         axios
@@ -28,25 +27,18 @@ const Scheduling = () => {
                 }
 
                 setUpcomingContests(upcomingContests);
+                setFilteredContests(upcomingContests.filter((contest) => new Date(contest.start) <= new Date()));
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
 
-    useEffect(() => {
-        setFilteredContests(upcomingContests.filter(
-            (contest) => new Date(contest.start) <= new Date()
-        ));
-    }, [upcomingContests]);
-
-    const handleFilterContests = (filterType) => {
+    const handleFilterContests = (filterType, buttonIndex) => {
         let filtered = [];
 
         if (filterType === 'ongoing') {
-            filtered = upcomingContests.filter(
-                (contest) => new Date(contest.start) <= new Date()
-            );
+            filtered = upcomingContests.filter((contest) => new Date(contest.start) <= new Date());
         } else if (filterType === 'laterToday') {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
@@ -65,42 +57,50 @@ const Scheduling = () => {
             );
         }
 
+        setActiveButton(buttonIndex);
         setFilteredContests(filtered);
     };
 
     return (
         <>
             <div className="card-container">
-                <button onClick={() => handleFilterContests('ongoing')}>
+                <button
+                    onClick={() => handleFilterContests('ongoing', 0)}
+                    className={activeButton === 0 ? 'active' : ''}
+                >
                     <div className="card2">
                         <div className="gradient"></div>
                         <div className="info">
-                            {/* <div className="text">First Group</div> */}
                             <div className="title">Currently Ongoing</div>
                         </div>
                     </div>
                 </button>
 
-                <button onClick={() => handleFilterContests('laterToday')}>
+                <button
+                    onClick={() => handleFilterContests('laterToday', 1)}
+                    className={activeButton === 1 ? 'active' : ''}
+                >
                     <div className="card2">
                         <div className="gradient"></div>
                         <div className="info">
-                            {/* <div className="text">First Group</div> */}
                             <div className="title">Today</div>
                         </div>
                     </div>
                 </button>
 
-                <button onClick={() => handleFilterContests('laterFuture')}>
+                <button
+                    onClick={() => handleFilterContests('laterFuture', 2)}
+                    className={activeButton === 2 ? 'active' : ''}
+                >
                     <div className="card2">
                         <div className="gradient"></div>
                         <div className="info">
-                            {/* <div className="text">First Group</div> */}
                             <div className="title">This Week</div>
                         </div>
                     </div>
                 </button>
             </div>
+
             <div className="container">
                 <h1>Upcoming Contests</h1>
                 {filteredContests.map((curElem, index) => {

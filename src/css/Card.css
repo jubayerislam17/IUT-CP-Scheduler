@@ -71,3 +71,7 @@ button{
     border: none;
     color: white;
 }
+
+.button.active {
+    background-color: orange;
+}
