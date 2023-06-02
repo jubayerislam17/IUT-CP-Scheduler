@@ -4,8 +4,20 @@ import '../css/Homepage.css';
 import { HomeTopbar } from './HomeTopbar';
 import { Navbar } from './Navbar';
 import { SettingsTopbar } from './SettingsTopbar';
+import { useLogout } from "../hooks/useLogout";
+import { AuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { Link } from 'react-router-dom';
 
 const Settings = () => {
+    const {logout} = useLogout()
+    const {user }= useAuthContext()
+
+    const handleClick = ()=>{
+        logout()
+
+    }
+
   return (
     <>
       <SettingsTopbar />
@@ -31,8 +43,11 @@ const Settings = () => {
 
         <div className="container2">
           <button className="childbox">
+            <Link to="/" onClick={handleClick}  >
             <div>Sign</div>
             <div>Out</div>
+            </Link>
+            {/* <Link to="/"><div onClick={handleClick}>Sign Out</div></Link> */}
           </button>
           <button className="childbox" id="red">
             <div>Request</div>
