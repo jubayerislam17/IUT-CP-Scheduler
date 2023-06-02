@@ -1,11 +1,21 @@
 import React from 'react'
-import '../css//settings.css'
+import { Link } from 'react-router-dom'
+import '../css/settings.css'
 import './HomeTopbar'
 import { HomeTopbar } from './HomeTopbar'
 import { Navbar } from './Navbar'
 import { SettingsTopbar } from './SettingsTopbar'
+import { useLogout } from '../hooks/useLogout'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const Settings = () => {
+    const { logout } = useLogout()
+    const { user } = useAuthContext()
+
+    const handleClick = () => {
+        logout()
+    }
+
     return (
         <>
             <SettingsTopbar />
@@ -28,10 +38,12 @@ const Settings = () => {
 
             </div>
 
+
             <div className="container">
                 <button className="childbox">
-                    <div>Sign</div>
-                    <div>Out</div>
+                    {/* <div>Sign</div>
+                    <div>Out</div> */}
+                    <Link to="/"><div onClick={handleClick}>Sign Out</div></Link>
                 </button>
                 <button className="childbox" id='red'>
                     <div>Request</div>
