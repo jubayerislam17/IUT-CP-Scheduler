@@ -25,6 +25,8 @@ const FetchData = () => {
                                 <div className="card_inner">
                                     <div className="webName">{curElem.login}</div>
                                     <div className="time">{curElem.url}</div>
+                                    <div className='userName'>{curElem.type}</div>
+                                    <div className='user'>{curElem.node_id}</div>
                                 </div>
                             </div>
                         </div>

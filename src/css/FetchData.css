@@ -47,6 +47,16 @@ body {
     width: 100%;
 }
 
+.container .card_item .userName {
+	color: #eaecf1;
+	font-weight: 400;
+	font-size: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    text-align: right;
+}
+
 .container .card_item .webName {
     color: #d07a7c;
     font-weight: 700;
@@ -60,13 +70,30 @@ body {
 .container .card_item .time {
     font-size: 13px;
     font-weight: 300;
-    margin: 5px 0 10px;
+    margin: -25px 0 10px;
     word-wrap: break-word;
     color: #ebeb0f;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: right;
+    padding-top: 0%;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+.container .card_item .user {
+    font-size: 13px;
+    font-weight: 300;
+    margin: -25px 0 10px;
+    word-wrap: break-word;
+    color: #edede6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    padding-top: 0%;
+    padding-left: 0%;
+    margin-left: 0%;
 }
 
 .container .card_item .gitDetail {
