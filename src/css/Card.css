@@ -65,3 +65,9 @@
     font-weight: bold;
     margin-top: 5px;
 }
+
+button{
+    background-color: transparent ;
+    border: none;
+    color: white;
+}

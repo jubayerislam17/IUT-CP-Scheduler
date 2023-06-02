@@ -9,7 +9,9 @@ import Homepage from './components/Homepage';
 import PersonalProfile from './components/PersonalProfile';
 //import Navbar from './components/Navbar';
 import { Navbar } from './components/Navbar';
-import Scheduling from './Scheduling';
+// import Scheduling from './Scheduling';
+import Scheduling
+ from './components/Scheduling';
 import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const {user} = useAuthContext()
@@ -21,10 +23,12 @@ function App() {
     <Route path="/" element={ !user? <Login/ > : <Homepage/> } />
     <Route path="/register" element={!user ? <Register /> : <Navigate to = "/" />  } />
     <Route path="/fetching" element={<Fetching />} />
-    <Route path="/scheduling" element={<Scheduling />} />
+    {/* <Route path="/scheduling" element={<Scheduling />} /> */}
+    <Route path="/Scheduling" element={<Scheduling />} />
+
 
     <Route path='/Settings' element={<Settings />}></Route>
-    {/* <Route path='../components/Homepage.jsx' element={<Homepage />}></Route> */}
+    <Route path='/Homepage' element={<Homepage />}></Route>
     <Route path='/PersonalProfile' element={<PersonalProfile />}></Route>
 
       {/* <Login/> */}

@@ -6,6 +6,7 @@ import { Navbar } from './Navbar'
 import { HomeTopbar } from './HomeTopbar'
 import Card from './Card'
 import FetchData from './FetchData'
+import Scheduling from './Scheduling'
 
 const Homepage = () => {
   return (
@@ -13,8 +14,9 @@ const Homepage = () => {
       <HomeTopbar
         name = "Jubayer"
       />
-      <Card />
-      <FetchData />
+      {/* <Card /> */}
+      {/* <FetchData /> */}
+      <Scheduling />
       <Navbar />
     </>
   )
