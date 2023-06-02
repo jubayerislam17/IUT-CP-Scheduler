@@ -20,6 +20,7 @@ function App() {
     <Routes>
     <Route path="/" element={ !user? <Login/ > : <Homepage/> } />
     <Route path="/register" element={!user ? <Register /> : <Navigate to = "/" />  } />
+    {/* <Route path="/register" element={<Register />   } /> */}
     <Route path="/fetching" element={<Fetching />} />
     <Route path="/scheduling" element={<Scheduling />} />
 

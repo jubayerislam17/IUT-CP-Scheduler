@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/FetchData.css'
 
-const FetchData = (props) => {
+const FetchData = () => {
 
     const [users, setUsers] = useState([]);
 
@@ -20,7 +20,7 @@ const FetchData = (props) => {
             {
                 users.map((curElem) => {
                     return (
-                        <div className="card">
+                        <div className="card3">
                             <div className="card_item" key={curElem.id}>
                                 <div className="card_inner">
                                     <div className="webName">{curElem.login}</div>

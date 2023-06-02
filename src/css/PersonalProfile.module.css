@@ -1,0 +1,27 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #152d32;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgba(21, 45, 50, 1), rgba(0,31,36, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom,
+    rgba(21, 45, 50, 1),
+    rgba(0, 146, 162, 1))
+}
+
+h6{
+  color: rgb(54, 50, 50);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  
+}

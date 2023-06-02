@@ -59,7 +59,7 @@ const Register = () => {
   return (
     <>
       <div className="main">
-        <form onSubmit={formik.handleSubmit}>
+        <form className='form-control1' onSubmit={formik.handleSubmit}>
           <MDBInput
             className="mb-4"
             type="name"
@@ -147,9 +147,9 @@ const Register = () => {
           </MDBBtn>
 
           <div className="text-center">
-            <p>
+            {/* <p>
               Not a member? <a href="#!">Register</a>
-            </p>
+            </p> */}
             <p>or sign up with:</p>
 
             <MDBBtn floating color="secondary" className="mx-1">

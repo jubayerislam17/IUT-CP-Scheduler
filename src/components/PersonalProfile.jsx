@@ -1,8 +1,7 @@
-import React from 'react';
-import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
-import '../css/PersonalProfile.css'
-import {Navbar} from './Navbar';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography } from 'mdb-react-ui-kit';
+import '../css/PersonalProfile.module.css';
+import { Navbar } from './Navbar';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -50,12 +49,11 @@ const CFuser = async (handle) => {
 };
 
 const PersonalProfile = () => {
-
   const [cfhandle, setHandle] = useState(null);
   const Data = JSON.parse(localStorage.getItem('user'));
   const uID = Data ? Data.id : null;
 
-  console.log('Data: ', uID)
+  console.log('Data: ', uID);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -66,10 +64,9 @@ const PersonalProfile = () => {
           const json = await response.json();
           setHandle(json.cf_handle);
           // console.log('after fetching:',cfhandle)
-  
         }
       } catch (error) {
-        console.log('erro executed')
+        console.log('erro executed');
         console.error(error);
       }
     };
@@ -94,83 +91,75 @@ const PersonalProfile = () => {
           'MaxRating': user.info.maxRating,
           'solveCount': Object.keys(user.solved).length,
           'contestCount': user.contests.size
-          
         };
         setUserInfo(dict);
       });
     }
   }, [cfhandle]);
 
-
   return (
     <>
-
       <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
         {userInfo ? (
-        <MDBContainer className="py-5 h-100">
-          <MDBRow className="justify-content-center align-items-center h-100">
-            <MDBCol lg="6" className="mb-4 mb-lg-0">
-              <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
-                <MDBRow className="g-0">
-                  <MDBCol md="4" className="gradient-custom text-center text-white"
-                    style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                    <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                      alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
-                    <MDBTypography tag="h5"> { userInfo.handle}</MDBTypography>
-                    {/* <MDBCardText>Web Designer</MDBCardText> */}
-                  </MDBCol>
-                  <MDBCol md="8">
-                    <MDBCardBody className="p-4">
-                      <MDBTypography tag="h6">Information</MDBTypography>
-                      <hr className="mt-0 mb-4" />
-                      <MDBRow className="pt-1">
-                        <MDBCol size="6" className="mb-3">
-                          <MDBTypography tag="h6">Contest Rating</MDBTypography>
-                          <MDBCardText className="text-muted">{ userInfo.rating}</MDBCardText>
-                        </MDBCol>
-                        <MDBCol size="6" className="mb-3">
-                          <MDBTypography tag="h6">Max Rating</MDBTypography>
-                          <MDBCardText className="text-muted">{  userInfo.MaxRating}</MDBCardText>
-                        </MDBCol>
-                      </MDBRow>
+          <MDBContainer className="py-5 h-100">
+            <MDBRow className="justify-content-center align-items-center h-100">
+              <MDBCol lg="6" className="mb-4 mb-lg-0">
+                <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
+                  <MDBRow className="g-0">
+                    <MDBCol md="4" className="gradient-custom text-center text-white" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
+                      <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
+                      <MDBTypography tag="h5">{userInfo.handle}</MDBTypography>
+                      {/* <MDBCardText>Web Designer</MDBCardText> */}
+                    </MDBCol>
+                    <MDBCol md="8">
+                      <MDBCardBody className="p-4">
+                        <MDBTypography tag="h6">Information</MDBTypography>
+                        <hr className="mt-0 mb-4" />
+                        <MDBRow className="pt-1">
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Contest Rating</MDBTypography>
+                            <MDBCardText className="text-muted">{userInfo.rating}</MDBCardText>
+                          </MDBCol>
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Max Rating</MDBTypography>
+                            <MDBCardText className="text-muted">{userInfo.MaxRating}</MDBCardText>
+                          </MDBCol>
+                        </MDBRow>
 
-                      {/* <MDBTypography tag="h6">Information</MDBTypography> */}
-                      <hr className="mt-0 mb-4" />
-                      <MDBRow className="pt-1">
-                        <MDBCol size="6" className="mb-3">
-                          <MDBTypography tag="h6">Solve</MDBTypography>
-                          <MDBCardText className="text-muted">{  userInfo.solveCount}</MDBCardText>
-                        </MDBCol>
-                        <MDBCol size="6" className="mb-3">
-                          <MDBTypography tag="h6">Count</MDBTypography>
-                          <MDBCardText className="text-muted">{ userInfo.contestCount}</MDBCardText>
-                        </MDBCol>
-                      </MDBRow>
+                        {/* <MDBTypography tag="h6">Information</MDBTypography> */}
+                        <hr className="mt-0 mb-4" />
+                        <MDBRow className="pt-1">
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Solve</MDBTypography>
+                            <MDBCardText className="text-muted">{userInfo.solveCount}</MDBCardText>
+                          </MDBCol>
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Count</MDBTypography>
+                            <MDBCardText className="text-muted">{userInfo.contestCount}</MDBCardText>
+                          </MDBCol>
+                        </MDBRow>
 
-                      <hr className="mt-0 mb-4" />
-                      <MDBRow className="pt-1">
-                        <MDBCol size="6" className="mb-3">
-                          <MDBTypography tag="h6">Total Solve</MDBTypography>
-                          <MDBCardText className="text-muted">info@example.com</MDBCardText>
-                        </MDBCol>
-                      </MDBRow>
-
-
-                    </MDBCardBody>
-                  </MDBCol>
-                </MDBRow>
-              </MDBCard>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
+                        <hr className="mt-0 mb-4" />
+                        {/* <MDBRow className="pt-1">
+                          <MDBCol size="6" className="mb-3">
+                            <MDBTypography tag="h6">Total Solve</MDBTypography>
+                            <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                          </MDBCol>
+                        </MDBRow> */}
+                      </MDBCardBody>
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCard>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
         ) : (
           <p>Loading user Info..</p>
         )}
       </section>
       <Navbar />
     </>
-    
   );
-}
+};
 
 export default PersonalProfile;
