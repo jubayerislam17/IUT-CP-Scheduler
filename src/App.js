@@ -8,7 +8,7 @@ import Settings from './components/Settings';
 import Homepage from './components/Homepage';
 import PersonalProfile from './components/PersonalProfile';
 import Scheduling from './Scheduling';
-import Navbar from './components/Navbar';
+import {Navbar} from './components/Navbar';
 import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const {user} = useAuthContext()
