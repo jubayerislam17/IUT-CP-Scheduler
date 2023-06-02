@@ -18,7 +18,7 @@ function App() {
     <Route path="/register" element={<Register />} />
     <Route path="/fetching/:handle" element={<Fetching />} />
     <Route path='/Settings' element={<Settings />}></Route>
-    <Route path='../components/Homepage.jsx' element={<Homepage />}></Route>
+    {/* <Route path='../components/Homepage.jsx' element={<Homepage />}></Route> */}
     <Route path='/PersonalProfile' element={<PersonalProfile />}></Route>
 
       {/* <Login/> */}
