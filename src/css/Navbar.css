@@ -1,0 +1,28 @@
+/* html,
+body,
+#root {
+  height: 100%;
+} */
+
+/* .contaier{
+  height: 100vh;
+  width: 100vw;
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  position: fixed !important;
+  /* top:84vh; */
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: #1F1F21;
+  padding-left: 14%;
+  padding-right: 18%;
+}
+
+#font {
+  color: #969393;
+}

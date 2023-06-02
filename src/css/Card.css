@@ -1,0 +1,67 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    padding-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card2 {
+    position: relative;
+    width: 330px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fff;
+    /* Add a white border */
+    background-color: transparent;
+    /* Set the background color to transparent */
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px auto;
+    }
+}
+
+.card2:hover .gradient {
+    background-color: orange;
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    transition: background-color 0.3s ease;
+}
+
+.info {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+}
+
+.text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
