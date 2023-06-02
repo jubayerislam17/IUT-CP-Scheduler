@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/FetchData.css'
 
-const FetchData = () => {
+const FetchData = (props) => {
 
     const [users, setUsers] = useState([]);
 
