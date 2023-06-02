@@ -4,7 +4,7 @@
 
 html, body {
   height: 100%;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 .container2 div {

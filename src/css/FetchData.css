@@ -1,6 +1,5 @@
 body {
     background-color: rgb(32, 30, 30);
-    overflow-y: scroll;
 }
 
 .container {
@@ -13,7 +12,6 @@ body {
     justify-content: space-between;
     justify-content: center;
     flex-wrap: wrap;
-    overflow-y: auto;
 }
 
 .card3 {

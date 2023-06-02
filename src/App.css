@@ -1,11 +1,9 @@
 #root{
   background-color: #1F1F21;
-  height: 100%
 }
 
 body {
   background-color: rgb(32, 30, 30);
-  overflow: hidden;
 }
 
 .container {
