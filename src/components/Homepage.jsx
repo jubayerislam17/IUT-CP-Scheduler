@@ -1,16 +1,21 @@
 import React from 'react'
+import '../css/Topbar.css'
+import '../css/Homepage.css'
+
 import { Navbar } from './Navbar'
-import { Topbar } from './Topbar'
+import { HomeTopbar } from './HomeTopbar'
+import Card from './Card'
+import FetchData from './FetchData'
 
 const Homepage = () => {
   return (
     <>
-        <Topbar 
-        firstparam="Hello,"
-    
-        />
-
-        <Navbar />
+      <HomeTopbar
+        name = "Jubayer"
+      />
+      <Card />
+      <FetchData />
+      <Navbar />
     </>
   )
 }

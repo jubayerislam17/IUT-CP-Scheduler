@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
-import '../PersonalProfile.css'
+import '../css/PersonalProfile.css'
 
 export default function PersonalProfile() {
   return (
@@ -16,7 +16,6 @@ export default function PersonalProfile() {
                     alt="Avatar" className="my-5" style={{ width: '80px' }} fluid />
                   <MDBTypography tag="h5">Rafio</MDBTypography>
                   <MDBCardText>Web Designer</MDBCardText>
-                  <MDBIcon far icon="edit mb-5" />
                 </MDBCol>
                 <MDBCol md="8">
                   <MDBCardBody className="p-4">
@@ -24,33 +23,37 @@ export default function PersonalProfile() {
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Email</MDBTypography>
+                        <MDBTypography tag="h6">Contest Rating</MDBTypography>
                         <MDBCardText className="text-muted">info@example.com</MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Phone</MDBTypography>
+                        <MDBTypography tag="h6">Max Rating</MDBTypography>
                         <MDBCardText className="text-muted">123 456 789</MDBCardText>
                       </MDBCol>
                     </MDBRow>
 
-                    <MDBTypography tag="h6">Information</MDBTypography>
+                    {/* <MDBTypography tag="h6">Information</MDBTypography> */}
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Email</MDBTypography>
+                        <MDBTypography tag="h6">Solve</MDBTypography>
                         <MDBCardText className="text-muted">info@example.com</MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
-                        <MDBTypography tag="h6">Phone</MDBTypography>
+                        <MDBTypography tag="h6">Count</MDBTypography>
                         <MDBCardText className="text-muted">123 456 789</MDBCardText>
                       </MDBCol>
                     </MDBRow>
 
-                    <div className="d-flex justify-content-start">
-                      <a href="#!"><MDBIcon fab icon="facebook me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="twitter me-3" size="lg" /></a>
-                      <a href="#!"><MDBIcon fab icon="instagram me-3" size="lg" /></a>
-                    </div>
+                    <hr className="mt-0 mb-4" />
+                    <MDBRow className="pt-1">
+                      <MDBCol size="6" className="mb-3">
+                        <MDBTypography tag="h6">Total Solve</MDBTypography>
+                        <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+
+                  
                   </MDBCardBody>
                 </MDBCol>
               </MDBRow>

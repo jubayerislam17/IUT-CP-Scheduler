@@ -1,22 +1,24 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import '../Navbar.css'
+import { Link } from 'react-router-dom'
+import '../css/Navbar.css'
 
 export const Navbar = () => {
   return (
     <>
       {/* <div className='container'> */}
+      {/* <Router> */}
         <div className='navbar'>
-        <div>
-          <NavLink to="/"><i class="fas fa-home" id='font'></i></NavLink>
+          <div>
+            <Link to="/"><i class="fas fa-home" id='font'></i></Link>
+          </div>
+          <div>
+            <Link to="/Contact"><i class="fa-regular fa-envelope" id='font'></i></Link>
+          </div>
+          <div>
+            <Link to="/Settings"><i class="fa-solid fa-gear" id='font'></i></Link>
+          </div>
         </div>
-        <div>
-          <NavLink to="/Contact"><i class="fa-regular fa-envelope" id='font'></i></NavLink>
-        </div>
-        <div>
-          <NavLink to="/Settings"><i class="fa-solid fa-gear" id='font'></i></NavLink>
-        </div>
-        </div>
+      {/* </Router> */}
       {/* </div> */}
     </>
     )

@@ -12,9 +12,7 @@
     border-radius: 5px;
   }
 
-  div{
-    /* background-color: transparent; */
-  }
+ 
 .mainContainer {
     display: flex;
     flex-direction: column;

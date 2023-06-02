@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import './css/Topbar.css'
 import Login from './Login';
 import Register from './Register';
 import Fetching from './Fetching';
@@ -11,8 +12,9 @@ import PersonalProfile from './components/PersonalProfile';
 function App() {
   return (
     <>
+    {/* <BrowserRouter> */}
     <Routes>
-    <Route path="/" element={<PersonalProfile/>} />
+    <Route path="/" element={<Homepage/>} />
     <Route path="/register" element={<Register />} />
     <Route path="/fetching/:handle" element={<Fetching />} />
     {/* <Route path='../components/Homepage.jsx' element={<Homepage />}></Route>
@@ -21,6 +23,8 @@ function App() {
 
       {/* <Login/> */}
     </Routes>
+    {/* </BrowserRouter> */}
+
     </>
     
   );
