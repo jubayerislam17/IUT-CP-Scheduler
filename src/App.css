@@ -1,5 +1,6 @@
 #root{
   background-color: #1F1F21;
+  overflow: auto;
 }
 
 body {
