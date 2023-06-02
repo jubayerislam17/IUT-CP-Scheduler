@@ -9,9 +9,7 @@ const Settings = () => {
     return (
         <>
             <SettingsTopbar />
-            {/* <div className='mainContainer'> */}
             <div className="container">
-                {/* <div className="box"> */}
                 <button className="childbox" id='brown'>
                     <div>Change</div>
                     <div>Usernames</div>
