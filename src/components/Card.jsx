@@ -5,35 +5,31 @@ import { Link } from "react-router-dom";
 const Card = () => {
     return (
         <div className="card-container">
-            <Link to="/" >
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         {/* <div className="text">First Group</div> */}
-                        <div className="title">Currently Ongoing</div>
+                        <div className="title"><button>Currently Ongoing</button></div>
                     </div>
                 </div>
-            </Link>
-            <Link to="/" >
 
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         {/* <div className="text">First Group</div> */}
-                        <div className="title">Today</div>
+                        <div className="title"><button>Today</button></div>
                     </div>
                 </div>
-            </Link>
-            <Link to="/" >
 
+            {/* <button> */}
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         {/* <div className="text">First Group</div> */}
-                        <div className="title">This Week</div>
+                    <div className="title"> <button>This Week</button></div>
                     </div>
                 </div>
-            </Link>
+            {/* </button> */}
         </div>
     );
 };
