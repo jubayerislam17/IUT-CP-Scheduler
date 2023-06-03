@@ -11,6 +11,7 @@ import {
 } from 'mdb-react-ui-kit';
 import './Log-reg.css';
 import { useSignup } from './hooks/useSignup';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const { signup, error, isLoading } = useSignup();
@@ -147,9 +148,9 @@ const Register = () => {
           </MDBBtn>
 
           <div className="text-center">
-            {/* <p>
-              Not a member? <a href="#!">Register</a>
-            </p> */}
+            <p>
+              Already a member? <Link to="/Login">Login</Link>
+            </p>
             <p>or sign up with:</p>
 
             <MDBBtn floating color="secondary" className="mx-1">

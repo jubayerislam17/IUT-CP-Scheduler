@@ -22,7 +22,7 @@ function App() {
     <Routes>
     <Route path="/" element={ !user? <Login/ > : <Homepage/> } />
     <Route path="/register" element={!user ? <Register /> : <Navigate to = "/" />  } />
-    {/* <Route path="/login" element={<Login />   } /> */}
+    <Route path="/login" element={<Login />   } />
     <Route path="/fetching" element={<Fetching />} />
     {/* <Route path="/scheduling" element={<Scheduling />} /> */}
     <Route path="/Scheduling" element={<Scheduling />} />

@@ -11,9 +11,9 @@ export const Navbar = () => {
           <div>
             <Link to="/"><i class="fas fa-home" id='font'></i></Link>
           </div>
-          <div>
+          {/* <div>
             <Link to="/Contact"><i class="fa-regular fa-envelope" id='font'></i></Link>
-          </div>
+          </div> */}
           <div>
             <Link to="/Settings"><i class="fa-solid fa-gear" id='font'></i></Link>
           </div>
