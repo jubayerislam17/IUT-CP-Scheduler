@@ -15,6 +15,11 @@ const Scheduling = () => {
             .then((response) => {
                 const allContests = response.data.result;
                 const upcomingContests = [];
+                        
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+                tomorrow.setHours(0, 0, 0, 0);
 
                 for (let contest of allContests) {
                     if (contest.phase === 'BEFORE') {
@@ -32,7 +37,8 @@ const Scheduling = () => {
                 }
 
                 setUpcomingContests(upcomingContests);
-                setFilteredContests(upcomingContests.filter((contest) => new Date(contest.startDate) <= new Date()));
+                setFilteredContests(upcomingContests.filter((contest) => new Date(contest.startDate) >= today &&
+                new Date(contest.startDate) < tomorrow));
             })
             .catch((error) => {
                 console.error(error);
@@ -41,33 +47,21 @@ const Scheduling = () => {
 
     const handleFilterContests = (filterType, buttonIndex) => {
         let filtered = [];
-
         const today = new Date();
         today.setHours(0, 0, 0, 0);
-        console.log(today);
+        const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+        const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
 
-        if (filterType === 'ongoing') {
-            filtered = upcomingContests.filter((contest) => new Date(contest.startDate) <= new Date());
-        } else if (filterType === 'laterToday') {
-          
-            upcomingContests.forEach((contest) => {
-                console.log(contest.startDate);
-                console.log(contest.startTime);
-            });
-
-
+        if (filterType === 'today') {
+            filtered = upcomingContests.filter((contest) => new Date(contest.startDate) >= today &&
+            new Date(contest.startDate) < tomorrow);
+        } else if (filterType === 'thisWeek') {
             filtered = upcomingContests.filter(
-                (contest) =>
-                    new Date(contest.startDate) >= new Date() &&
-                    new Date(contest.startDate) <= new Date(today.getTime() + 24 * 60 * 60 * 1000)
-            );
-        } else if (filterType === 'laterFuture') {
-            // const today = new Date();
-            // today.setHours(0, 0, 0, 0);
+                (contest) => new Date(contest.startDate) <= new Date(nextWeek)
 
-            filtered = upcomingContests.filter(
-                (contest) => new Date(contest.startDate) >= new Date(today.getTime() + 24 * 60 * 60 * 1000)
             );
+        } else if (filterType === 'allAnnounced') {
+            filtered = upcomingContests;
         }
 
         setActiveButton(buttonIndex);
@@ -77,42 +71,44 @@ const Scheduling = () => {
     return (
         <>
             <div className="card-container">
+                
+
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         <div className="title">
 
-                            <button onClick={() => handleFilterContests('ongoing', 0)} className={activeButton === 0 ? 'active' : ''}>
-                                Currently Ongoing
+                            <button onClick={() => handleFilterContests('today', 0)} className={activeButton === 0 ? 'active' : ''}>
+                                Today
                             </button>
                         </div>
                     </div>
                 </div>
 
-
+               
 
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         <div className="title">
                             <button
-                                onClick={() => handleFilterContests('laterToday', 1)}
+                                onClick={() => handleFilterContests('thisWeek', 1)}
                                 className={activeButton === 1 ? 'active' : ''}
-                            >Today</button>
+                            >This Week</button>
                         </div>
                     </div>
                 </div>
 
-
+               
 
                 <div className="card2">
                     <div className="gradient"></div>
                     <div className="info">
                         <div className="title">
                             <button
-                                onClick={() => handleFilterContests('laterFuture', 2)}
+                                onClick={() => handleFilterContests('allAnnounced', 2)}
                                 className={activeButton === 2 ? 'active' : ''}
-                            >This Week</button>
+                            >All Announced</button>
                         </div>
                     </div>
                 </div>
