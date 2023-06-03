@@ -71,41 +71,47 @@ const Scheduling = () => {
     return (
         <>
             <div className="card-container">
-                <button
-                    onClick={() => handleFilterContests('today', 0)}
-                    className={activeButton === 0 ? 'active' : ''}
-                >
-                    <div className={`card2 ${activeButton === 0 ? 'green' : ''}`}>
-                        <div className="gradient"></div>
-                        <div className="info">
-                            <div className="title">Today</div>
-                        </div>
-                    </div>
-                </button>
+                
 
-                <button
-                    onClick={() => handleFilterContests('thisWeek', 1)}
-                    className={activeButton === 1 ? 'active' : ''}
-                >
-                    <div className={`card2 ${activeButton === 1 ? 'green' : ''}`}>
-                        <div className="gradient"></div>
-                        <div className="info">
-                            <div className="title">This Week</div>
-                        </div>
-                    </div>
-                </button>
+                <div className="card2">
+                    <div className="gradient"></div>
+                    <div className="info">
+                        <div className="title">
 
-                <button
-                    onClick={() => handleFilterContests('allAnnounced', 2)}
-                    className={activeButton === 2 ? 'active' : ''}
-                >
-                    <div className={`card2 ${activeButton === 2 ? 'green' : ''}`}>
-                        <div className="gradient"></div>
-                        <div className="info">
-                            <div className="title">All Announced</div>
+                            <button onClick={() => handleFilterContests('today', 0)} className={activeButton === 0 ? 'active' : ''}>
+                                Today
+                            </button>
                         </div>
                     </div>
-                </button>
+                </div>
+
+               
+
+                <div className="card2">
+                    <div className="gradient"></div>
+                    <div className="info">
+                        <div className="title">
+                            <button
+                                onClick={() => handleFilterContests('thisWeek', 1)}
+                                className={activeButton === 1 ? 'active' : ''}
+                            >This Week</button>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <div className="card2">
+                    <div className="gradient"></div>
+                    <div className="info">
+                        <div className="title">
+                            <button
+                                onClick={() => handleFilterContests('allAnnounced', 2)}
+                                className={activeButton === 2 ? 'active' : ''}
+                            >All Announced</button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
