@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/FetchData.css';
 import '../css/Card.css';
+import '../css/FetchData.css';
 
 const Scheduling = () => {
     const [upcomingContests, setUpcomingContests] = useState([]);
@@ -17,16 +18,21 @@ const Scheduling = () => {
 
                 for (let contest of allContests) {
                     if (contest.phase === 'BEFORE') {
+                        const startDateTime = new Date((contest.startTimeSeconds - 300) * 1000);
+                        const startDate = startDateTime.toDateString();
+                        const startTime = startDateTime.toTimeString().substring(0, 5);
+
                         upcomingContests.push({
                             url: `https://codeforces.com/contests/${contest.id}`,
                             name: contest.name,
-                            start: new Date((contest.startTimeSeconds - 300) * 1000).toISOString(),
+                            startDate,
+                            startTime,
                         });
                     }
                 }
 
                 setUpcomingContests(upcomingContests);
-                setFilteredContests(upcomingContests.filter((contest) => new Date(contest.start) <= new Date()));
+                setFilteredContests(upcomingContests.filter((contest) => new Date(contest.startDate) <= new Date()));
             })
             .catch((error) => {
                 console.error(error);
@@ -37,22 +43,22 @@ const Scheduling = () => {
         let filtered = [];
 
         if (filterType === 'ongoing') {
-            filtered = upcomingContests.filter((contest) => new Date(contest.start) <= new Date());
+            filtered = upcomingContests.filter((contest) => new Date(contest.startDate) <= new Date());
         } else if (filterType === 'laterToday') {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
             filtered = upcomingContests.filter(
                 (contest) =>
-                    new Date(contest.start) > new Date() &&
-                    new Date(contest.start) < new Date(today.getTime() + 24 * 60 * 60 * 1000)
+                    new Date(contest.startDate) > new Date() &&
+                    new Date(contest.startDate) < new Date(today.getTime() + 24 * 60 * 60 * 1000)
             );
         } else if (filterType === 'laterFuture') {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
             filtered = upcomingContests.filter(
-                (contest) => new Date(contest.start) >= new Date(today.getTime() + 24 * 60 * 60 * 1000)
+                (contest) => new Date(contest.startDate) >= new Date(today.getTime() + 24 * 60 * 60 * 1000)
             );
         }
 
@@ -101,15 +107,16 @@ const Scheduling = () => {
             </div>
 
             <div className="container">
-                {/* <h1>Upcoming Contests</h1> */}
                 {filteredContests.map((curElem, index) => {
                     return (
-                        <div className="card" key={curElem.url}>
+                        <div className="card3" key={curElem.url}>
                             <div className="card_item">
                                 <div className="card_inner">
-                                <div className='box'></div>
                                     <div className="webName">{curElem.name}</div>
-                                    <div className="time">{curElem.start}</div>
+                                    {/* <div className="date">{curElem.startDate}</div> */}
+                                    <div className="time">{curElem.startDate}</div>
+                                    <div className='userName'>{curElem.startTime}</div>
+                                    {/* <div className='user'>{curElem.startTime}</div> */}
                                 </div>
                             </div>
                         </div>
@@ -121,3 +128,5 @@ const Scheduling = () => {
 };
 
 export default Scheduling;
+
+

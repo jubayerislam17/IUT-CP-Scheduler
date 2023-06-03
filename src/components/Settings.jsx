@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/settings.css';
-import '../css/Homepage.css';
+// import '../css/Homepage.css';
 import { HomeTopbar } from './HomeTopbar';
 import { Navbar } from './Navbar';
 import { SettingsTopbar } from './SettingsTopbar';
