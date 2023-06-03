@@ -73,7 +73,7 @@ const Scheduling = () => {
                     onClick={() => handleFilterContests('ongoing', 0)}
                     className={activeButton === 0 ? 'active' : ''}
                 >
-                    <div className="card2">
+                    <div className={`card2 ${activeButton === 0 ? 'green' : ''}`}>
                         <div className="gradient"></div>
                         <div className="info">
                             <div className="title">Currently Ongoing</div>
@@ -85,7 +85,7 @@ const Scheduling = () => {
                     onClick={() => handleFilterContests('laterToday', 1)}
                     className={activeButton === 1 ? 'active' : ''}
                 >
-                    <div className="card2">
+                    <div className={`card2 ${activeButton === 1 ? 'green' : ''}`}>
                         <div className="gradient"></div>
                         <div className="info">
                             <div className="title">Today</div>
@@ -97,7 +97,7 @@ const Scheduling = () => {
                     onClick={() => handleFilterContests('laterFuture', 2)}
                     className={activeButton === 2 ? 'active' : ''}
                 >
-                    <div className="card2">
+                    <div className={`card2 ${activeButton === 2 ? 'green' : ''}`}>
                         <div className="gradient"></div>
                         <div className="info">
                             <div className="title">This Week</div>
@@ -128,5 +128,3 @@ const Scheduling = () => {
 };
 
 export default Scheduling;
-
-

@@ -49,6 +49,9 @@ const CFuser = async (handle) => {
 };
 
 const PersonalProfile = () => {
+  const gradientStyle = {
+    background: 'linear-gradient(to right bottom, rgba(21, 45, 50, 1), rgba(0, 146, 162, 1))',
+  };
   const [cfhandle, setHandle] = useState(null);
   const Data = JSON.parse(localStorage.getItem('user'));
   const uID = Data ? Data.id : null;
@@ -99,17 +102,17 @@ const PersonalProfile = () => {
 
   return (
     <>
-      <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
+      <section className="vh-100" >
         {userInfo ? (
           <MDBContainer className="py-5 h-100">
             <MDBRow className="justify-content-center align-items-center h-100">
               <MDBCol lg="6" className="mb-4 mb-lg-0">
-                <MDBCard className="mb-3" style={{ borderRadius: '.5rem' }}>
+                <MDBCard className="mb-3" style={{borderRadius: '.5rem', backgroundColor:'green' }}>
                   <MDBRow className="g-0">
                     <MDBCol md="4" className="gradient-custom text-center text-white" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                       <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="Avatar" className="my-5" style={{ width: '80px', borderRadius:'50%' }} fluid />
                       <MDBTypography tag="h5">{userInfo.handle}</MDBTypography>
-                      {/* <MDBCardText>Web Designer</MDBCardText> */}
+                      <MDBCardText >Web Designer</MDBCardText>
                     </MDBCol>
                     <MDBCol md="8">
                       <MDBCardBody className="p-4">

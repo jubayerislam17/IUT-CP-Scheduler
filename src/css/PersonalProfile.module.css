@@ -11,6 +11,7 @@
     rgba(0, 146, 162, 1))
 }
 
+
 h6{
   color: rgb(54, 50, 50);
 }
@@ -21,7 +22,8 @@ h6{
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  /* background-color: green; */
   background-clip: border-box;
   
 }
+

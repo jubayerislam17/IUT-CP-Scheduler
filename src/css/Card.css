@@ -79,3 +79,8 @@ button{
 .box{
     display: flex;
 }
+
+.green {
+    background-color: orange;
+    /* Add any other desired styles for the green class */
+}
