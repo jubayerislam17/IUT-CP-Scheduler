@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../css/FetchData.css';
+// import '../css/FetchData.css';
 import '../css/Card.css';
 import '../css/FetchData.css';
 
@@ -58,6 +58,7 @@ const Scheduling = () => {
         } else if (filterType === 'thisWeek') {
             filtered = upcomingContests.filter(
                 (contest) => new Date(contest.startDate) <= new Date(nextWeek)
+
             );
         } else if (filterType === 'allAnnounced') {
             filtered = upcomingContests;
@@ -105,6 +106,7 @@ const Scheduling = () => {
                         </div>
                     </div>
                 </button>
+
             </div>
 
             <div className="container">
@@ -113,7 +115,8 @@ const Scheduling = () => {
                         <div className="card3" key={curElem.url}>
                             <div className="card_item">
                                 <div className="card_inner">
-                                    <div className="webName">{curElem.name}</div>
+                                <div className='codeforces'>Codeforces</div>
+                                    <div className="webName">{curElem.name.substring(11,)}</div>
                                     {/* <div className="date">{curElem.startDate}</div> */}
                                     <div className="time">{curElem.startDate}</div>
                                     <div className='userName'>{curElem.startTime}</div>
