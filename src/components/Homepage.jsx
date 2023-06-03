@@ -5,7 +5,7 @@ import '../css/Homepage.css'
 import { Navbar } from './Navbar'
 import { HomeTopbar } from './HomeTopbar'
 import Card from './Card'
-import FetchData from './FetchData'
+// import FetchData from './FetchData'
 import Scheduling from './Scheduling'
 
 const Homepage = () => {
