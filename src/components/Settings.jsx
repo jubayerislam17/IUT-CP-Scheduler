@@ -22,7 +22,7 @@ const Settings = () => {
     <>
       <SettingsTopbar />
       <div className="mainContainer">
-        <div className="container2">
+        {/* <div className="container2">
           <button className="childbox" id="brown">
             <div>Change</div>
             <div>Usernames</div>
@@ -39,7 +39,7 @@ const Settings = () => {
             <br />
             <span>Display name</span>
           </button>
-        </div>
+        </div> */}
 
         <div className="container2">
           <button className="childbox">

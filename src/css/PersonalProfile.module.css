@@ -22,8 +22,12 @@ h6{
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  /* background-color: green; */
+  /* background-color: white; */
   background-clip: border-box;
   
 }
 
+
+.text-muted{
+  color: white;
+}

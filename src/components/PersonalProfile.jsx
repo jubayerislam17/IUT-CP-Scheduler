@@ -107,12 +107,11 @@ const PersonalProfile = () => {
           <MDBContainer className="py-5 h-100">
             <MDBRow className="justify-content-center align-items-center h-100">
               <MDBCol lg="6" className="mb-4 mb-lg-0">
-                <MDBCard className="mb-3" style={{borderRadius: '.5rem', backgroundColor:'green' }}>
+                <MDBCard className="mb-3" style={{ borderRadius: '.5rem', backgroundColor:'#F8A145' }}>
                   <MDBRow className="g-0">
                     <MDBCol md="4" className="gradient-custom text-center text-white" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                       <MDBCardImage src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="Avatar" className="my-5" style={{ width: '80px', borderRadius:'50%' }} fluid />
                       <MDBTypography tag="h5">{userInfo.handle}</MDBTypography>
-                      <MDBCardText >Web Designer</MDBCardText>
                     </MDBCol>
                     <MDBCol md="8">
                       <MDBCardBody className="p-4">
@@ -121,11 +120,11 @@ const PersonalProfile = () => {
                         <MDBRow className="pt-1">
                           <MDBCol size="6" className="mb-3">
                             <MDBTypography tag="h6">Contest Rating</MDBTypography>
-                            <MDBCardText className="text-muted">{userInfo.rating}</MDBCardText>
+                            <MDBCardText className="text-muted"><p style={{color:'white'}}>{userInfo.rating}</p></MDBCardText>
                           </MDBCol>
                           <MDBCol size="6" className="mb-3">
                             <MDBTypography tag="h6">Max Rating</MDBTypography>
-                            <MDBCardText className="text-muted">{userInfo.MaxRating}</MDBCardText>
+                            <MDBCardText className="text-muted"><p style={{ color: 'white' }}>{userInfo.MaxRating}</p></MDBCardText>
                           </MDBCol>
                         </MDBRow>
 
@@ -134,11 +133,11 @@ const PersonalProfile = () => {
                         <MDBRow className="pt-1">
                           <MDBCol size="6" className="mb-3">
                             <MDBTypography tag="h6">Solve</MDBTypography>
-                            <MDBCardText className="text-muted">{userInfo.solveCount}</MDBCardText>
+                            <MDBCardText className="text-muted"><p style={{ color: 'white' }}>{userInfo.solveCount}</p></MDBCardText>
                           </MDBCol>
                           <MDBCol size="6" className="mb-3">
                             <MDBTypography tag="h6">Count</MDBTypography>
-                            <MDBCardText className="text-muted">{userInfo.contestCount}</MDBCardText>
+                            <MDBCardText className="text-muted"><p style={{ color: 'white' }}>{userInfo.contestCount}</p></MDBCardText>
                           </MDBCol>
                         </MDBRow>
 
