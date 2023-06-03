@@ -59,9 +59,9 @@ const Register = () => {
   return (
     <>
       <div className="main">
-        <form className='form-control1' onSubmit={formik.handleSubmit}>
+        <form className='form-outline' onSubmit={formik.handleSubmit}>
           <MDBInput
-            className="mb-4"
+            className="form-control mb-4"
             type="name"
             name="name"
             id="form3Example3"

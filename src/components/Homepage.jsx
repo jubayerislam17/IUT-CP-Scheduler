@@ -14,9 +14,9 @@ const Homepage = () => {
       <HomeTopbar
         name = "Jubayer"
       />
-      {/* <Card /> */}
-      {/* <FetchData /> */}
-      <Scheduling />
+      <Card />
+      <FetchData />
+      {/* <Scheduling /> */}
       <Navbar />
     </>
   )

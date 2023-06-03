@@ -19,13 +19,13 @@ label{
     color: white;
    }
    
-   .form-control1 {
+   .form-outline .form-control {
     min-height: auto;
     padding-top: 0.33em;
     padding-bottom: 0.33em;
     padding-left: 0.75em;
     padding-right: 0.75em;
     border: 0;
-    /* background: transparent; */
+    background: white !important;
     transition: all .2s linear;
-}
+   }
