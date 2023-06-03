@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
 import axios from 'axios';
 import '../css/FetchData.css';
 import '../css/Card.css';
@@ -102,12 +101,13 @@ const Scheduling = () => {
             </div>
 
             <div className="container">
-                <h1>Upcoming Contests</h1>
+                {/* <h1>Upcoming Contests</h1> */}
                 {filteredContests.map((curElem, index) => {
                     return (
                         <div className="card" key={curElem.url}>
                             <div className="card_item">
                                 <div className="card_inner">
+                                <div className='box'></div>
                                     <div className="webName">{curElem.name}</div>
                                     <div className="time">{curElem.start}</div>
                                 </div>

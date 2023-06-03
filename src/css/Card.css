@@ -75,3 +75,7 @@ button{
 .button.active {
     background-color: orange;
 }
+
+.box{
+    display: flex;
+}
